@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evee-Spotify Mod</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1db954 0%, #191414 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #1db954;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: #1db954;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #1db954;
+            margin-bottom: 1rem;
+        }
+
+        .download-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #1db954;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s, transform 0.3s;
+            margin: 1rem 0;
+        }
+
+        .download-btn:hover {
+            background: #1ed760;
+            transform: scale(1.05);
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .version-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .credit-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .credit-item h3 {
+            color: #1db954;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .credit-item p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showPage('home')">Home</a></li>
+            <li><a href="#downloads" onclick="showPage('downloads')">Downloads</a></li>
+            <li><a href="#credits" onclick="showPage('credits')">Credits</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="hero">
+                <h1>Evee-Spotify Mod</h1>
+                <p>Enhanced Spotify Experience with Premium Features</p>
+            </div>
+
+            <h2>About</h2>
+            <p>Evee-Spotify is a modified version of the Spotify client that unlocks premium features for free! Except some of the main premium features such as jam. </p>
+
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🎵 Ad-Free Listening</h3>
+                    <p>Enjoy your favorite music without interruptions from advertisements.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⏭️ Unlimited Skips</h3>
+                    <p>Skip as many tracks as you want without any restrictions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎧 Play songs in any order</h3>
+                    <p>Title says it all. You can play songs in any order ust like premium!</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎨 Organize listening queue</h3>
+                    <p>Listen however you like.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔄 Regular Updates</h3>
+                    <p>The IPA does get updated reguarly so it can work. FYI, Old Ipas work.</p>
+                </div>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ Disclaimer:</strong> This is a third-party modification. Use at your own risk. We dont recommend supporting Spotify by purchasing a legitimate premium subscription.
+            </div>
+        </div>
+
+        <!-- Downloads Page -->
+        <div id="downloads" class="page">
+            <h1>Downloads</h1>
+            
+            <div class="download-section">
+                <h2>Latest Version</h2>
+                <div class="version-info">
+                    <div>
+                        <strong>Version 9.0.84</strong>
+                        <p>Released: October 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <h2>Other Installation Methods</h2>
+                <div class="version-info">
+                    <div>
+                        <strong>Evee IPA</strong>
+                        <p>Version 9.0.86 - For iOS Sideloading</p>
+                    </div>
+                    <a href="https://www.mediafire.com/file/mamrq8y0su85vbr/EeveeSpotify-9.0.84.ipa/file" class="download-btn">Download Evee IPA</a>
+                </div>
+                <div class="version-info">
+                    <div>
+                        <strong>Direct Install</strong>
+                        <p>Quick installation via web</p>
+                    </div>
+                    <a href="#" class="download-btn">Install Directly (work in progress)</a>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <h2>Installation Instructions</h2>
+                <ol style="line-height: 2; padding-left: 2rem;">
+                    <li>Download the appropriate version for your platform</li>
+                    <li>Uninstall any existing Spotify installations</li>
+                    <li>Run the installer and follow the on-screen instructions</li>
+                    <li>Launch the application and log in with your Spotify account</li>
+                    <li>Enjoy your enhanced Spotify experience!</li>
+                </ol>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ Important:</strong> Always download from this website for direct install but also you could download the ipa from here or the offical telegram link for evee spotify.
+            </div>
+        </div>
+
+        <!-- Credits Page -->
+        <div id="credits" class="page">
+            <h1>Credits</h1>
+            
+            <div class="download-section">
+                <h2>👨‍💻 Website Team</h2>
+                
+                <div class="credit-item">
+                    <h3>Ham</h3>
+                    <p>Creator of the website</p>
+                </div>
+                
+                <div class="credit-item">
+                    <h3>Claude</h3>
+                    <p>AI coder to help with this project</p>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <h2>🎵 Evee Spotify</h2>
+                <div class="version-info">
+                    <div>
+                        <strong>Evee Spotify Telegram</strong>
+                        <p>Official community channel</p>
+                    </div>
+                    <a href="https://t.me/SpotilifeIPAs" class="download-btn" target="_blank">Join Telegram</a>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <h2>✍️ IPA Signing</h2>
+                
+                <div class="credit-item">
+                    <h3>Iscs and Brawlmods</h3>
+                    <p>Signing the IPA with certificates</p>
+                </div>
+                
+              
+            </div>
+
+            <div class="warning">
+                <strong>💚 Thank You!</strong> Special thanks to everyone who contributed to making this project possible. Join Evee Telegram community to stay updated with the latest releases and connect with other users.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+        }
+
+        // Ensure pages work on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show home page by default
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
